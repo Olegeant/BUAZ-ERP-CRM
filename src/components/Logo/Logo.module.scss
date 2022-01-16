@@ -1,0 +1,25 @@
+@import '../../assets/scss/abstracts/mixins';
+
+.Logo {
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: 'UA';
+    display: block;
+    margin: -8px 0 -4px;
+
+    color: transparent;
+    background-image: linear-gradient(to bottom, blue, yellow);
+    background-clip: text;
+
+    font-family: sans-serif;
+    font-size: 45px;
+    line-height: 1;
+    font-weight: 900;
+  }
+}
+
+.bosalLogo {
+  margin-right: 5px;
+}

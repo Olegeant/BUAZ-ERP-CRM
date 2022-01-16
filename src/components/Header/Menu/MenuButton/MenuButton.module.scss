@@ -1,0 +1,27 @@
+.MenuLink {
+  position: relative;
+  display: block;
+  padding: 25px 0;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MenuButtonActive {
+  background-color: teal;
+  color: white;
+  box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
+    0px 2px 2px rgb(0 0 0 / 12%);
+}
+
+.MenuButton {
+  display: block;
+  padding: 8px 16px;
+
+  border-radius: 4px;
+  border: 1px solid teal;
+  background-color: white;
+  color: teal;
+}

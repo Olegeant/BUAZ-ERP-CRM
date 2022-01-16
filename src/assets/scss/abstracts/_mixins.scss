@@ -1,0 +1,28 @@
+// @use "sass:string";
+@use 'sass:math';
+
+@mixin centeredFlex($type: flex) {
+  display: $type;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font($fs, $lh) {
+  font-size: $fs;
+  line-height: math.div($lh, $fs);
+}
+
+@mixin transitionMain($properties...) {
+  $transition: '';
+  @each $property in $properties {
+    $transition: $transition +
+      $property +
+      ' ' +
+      $transitionTime +
+      ' ' +
+      $cubicBezierMain +
+      ', ';
+  }
+  $transition: str-slice($transition, 1, -2);
+  transition: unquote($transition);
+}
