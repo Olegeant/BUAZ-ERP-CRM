@@ -1,6 +1,15 @@
+import { lazy, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Logo from './Logo';
+import NavMenu from './NavMenu';
 import Header from './Header';
+import Main from './Main';
 import Footer from './Footer';
+
+import BusinessCalendarPage from '../pages/BusinessCalendarPage';
+import YearCalendarPage from '../pages/YearCalendarPage';
+
 import './App.css';
 
 function App() {
@@ -8,26 +17,20 @@ function App() {
     <>
       <Header>
         <Logo />
+        <NavMenu />
       </Header>
 
-      <div className="App">
-        <Logo />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </div>
+      <Main>
+        <Routes>
+          <Route
+            path="time/business-calendar"
+            element={<BusinessCalendarPage />}
+          />
+          <Route path="time/year-calendar" element={<YearCalendarPage />} />\
+        </Routes>
+      </Main>
 
-      <Footer>
-        <Logo />
-      </Footer>
+      <Footer />
     </>
   );
 }

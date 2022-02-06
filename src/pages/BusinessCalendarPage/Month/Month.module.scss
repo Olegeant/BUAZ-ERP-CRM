@@ -1,0 +1,93 @@
+.Month {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  cursor: default;
+}
+
+.Month th {
+  font-size: 14px;
+  line-height: 1.31;
+  background-color: teal;
+  color: white;
+}
+
+.Month th,
+.Month td {
+  width: calc(100% / 6);
+  height: 20px;
+  padding: 2px 4px;
+  border: 1px solid #999999;
+  color: inherit;
+  font-weight: 700;
+  text-align: right;
+}
+
+.MonthName {
+  border: 1px solid #bbbbbb;
+  border-bottom: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.MonthLink {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: teal;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    left: 10px;
+    top: 50%;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../../../assets/images/calendar.svg);
+    transform: translateY(-50%);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.WeekCW {
+}
+
+.WeekDay {
+  &:not(:nth-last-child(-n + 2)):hover {
+    background-color: navy;
+    color: white;
+  }
+
+  & td:not(.empty):hover {
+    background-color: blue;
+  }
+}
+
+.WeekDay.Saturday,
+.WeekDay.Sunday {
+  color: red;
+}
+
+.Saturday {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Sunday {
+  background-color: rgba(0, 0, 0, 0.2);
+}

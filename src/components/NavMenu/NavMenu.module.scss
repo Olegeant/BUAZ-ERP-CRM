@@ -1,0 +1,15 @@
+.NavMenu {
+  margin-left: auto;
+}
+
+.NavMenuList {
+  display: flex;
+}
+
+.NavMenuItem {
+  padding: 20px 0;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
